@@ -12,4 +12,10 @@ final class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    @IBAction func doneButtonAction(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
+
 }
