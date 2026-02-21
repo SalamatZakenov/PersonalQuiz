@@ -42,6 +42,12 @@ final class QuestionsViewController: UIViewController {
         rangedSlider.value = answersCount / 2
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Проверяем идентификатор перехода (убедитесь, что в Storyboard он назван "showResult")
+        guard let resultVC = segue.destination as? ResultViewController else { return }
+        resultVC.responses = answersChosen
+    }
+
     // MARK: - IB Actions
     @IBAction func singleQuestionButtonPressed(_ sender: UIButton) {
         guard let buttonIndex = singleButtons.firstIndex(of: sender) else { return }
@@ -75,14 +81,19 @@ private extension QuestionsViewController {
             stackView?.isHidden = true
         }
         
+        // Set navigation title
         title = "Вопрос № \(questionIndex + 1) из \(questions.count)"
-        
+       
+        // Get current question
         let currentQuestion = questions[questionIndex]
         
+        // Set current question for label
         questionLabel.text = currentQuestion.title
         
+        // Calculate progress
         let totalProgress = Float(questionIndex) / Float(questions.count)
         
+        // Set progress for questionProgressView
         questionProgressView.setProgress(totalProgress, animated: true)
         
         showCurrentAnswers(for: currentQuestion.type)

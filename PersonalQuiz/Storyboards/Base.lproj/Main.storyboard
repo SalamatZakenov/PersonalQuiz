@@ -300,16 +300,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="559-i3-svC">
-                                <rect key="frame" x="107.5" y="285.5" width="160.5" height="96.5"/>
+                                <rect key="frame" x="16" y="285.5" width="343" height="96.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы - 🐙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gds-83-JzC">
-                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="60"/>
+                                        <rect key="frame" x="91.5" y="0.0" width="160.5" height="60"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы осьминог" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6M-Wr-fkt">
-                                        <rect key="frame" x="28" y="76" width="104" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вы осьминог" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6M-Wr-fkt">
+                                        <rect key="frame" x="119.5" y="76" width="104" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -320,6 +320,8 @@
                         <viewLayoutGuide key="safeArea" id="JnK-z8-dIm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="JnK-z8-dIm" firstAttribute="trailing" secondItem="559-i3-svC" secondAttribute="trailing" constant="16" id="D42-wU-HMd"/>
+                            <constraint firstItem="559-i3-svC" firstAttribute="leading" secondItem="JnK-z8-dIm" secondAttribute="leading" constant="16" id="hIJ-Hz-Yps"/>
                             <constraint firstItem="559-i3-svC" firstAttribute="centerY" secondItem="szz-1z-6K7" secondAttribute="centerY" id="ihv-rz-mnc"/>
                             <constraint firstItem="559-i3-svC" firstAttribute="centerX" secondItem="szz-1z-6K7" secondAttribute="centerX" id="wjc-PD-DGb"/>
                         </constraints>
@@ -331,6 +333,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="resultAnimalLabel" destination="Gds-83-JzC" id="0I1-an-9Gx"/>
+                        <outlet property="resultDefinitionLabel" destination="A6M-Wr-fkt" id="edN-6F-Qug"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XgD-qn-9Rm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
